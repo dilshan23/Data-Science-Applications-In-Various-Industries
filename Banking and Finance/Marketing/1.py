@@ -68,6 +68,7 @@ df.data1 = df.iloc[:,0:19] #new training data set with all varikables where cat.
 df.data1 = pd.get_dummies(df.data1)
 
 
+
 for c in df.data1.columns:
   print c
 

@@ -15,6 +15,11 @@ q1 <- "SELECT Open FROM funda"
 result1<-dbGetQuery(con,q1)
 result1
 
+#get maximum
+q5 <- "SELECT Avg(Open) FROM funda "
+result5 <- dbGetQuery(con,q5)
+result5
+
 
 q2 <- "SELECT * FROM funda WHERE Date BETWEEN '2015-01-01' AND '2015-12-31'"
 result2<-dbGetQuery(con,q2)
