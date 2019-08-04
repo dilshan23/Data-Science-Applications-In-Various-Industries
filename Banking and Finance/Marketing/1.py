@@ -83,4 +83,6 @@ model1 = LogisticRegression()
 model1
 model1.fit(Xtrain1, ytrain1)
 
-print model.score(Xtrain1, ytrain1)
+print model1.score(Xtrain1, ytrain1)
+
+#output 0.9103793626707132
