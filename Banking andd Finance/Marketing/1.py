@@ -32,5 +32,27 @@
 """
 
 import pandas as pd 
+from sklearn.naive_bayes import GaussianNB
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+
 df = pd.read_csv("bank-additional-full.csv",sep = ';')
 print df.head()
+
+df.data = df.iloc[:,[0,19]] # or  df.iloc[:,[2,3,6]]  --> select only 2,3 and 6th columns  | df.iloc[:,0:19] --> all columns from 1st to 20th columns
+df.target = df['y']
+print df.target.head()
+
+
+Xtrain, Xtest, ytrain, ytest = train_test_split(df.data, df.target,random_state=42,test_size = 0.20)
+
+
+print Xtrain
+print ytrain
+
+#model = GaussianNB()
+model = LogisticRegression()
+model
+model.fit(Xtrain, ytrain);
+
+print model.score(Xtrain, ytrain)
