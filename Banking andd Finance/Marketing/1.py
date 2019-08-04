@@ -53,6 +53,9 @@ print ytrain
 #model = GaussianNB()
 model = LogisticRegression()
 model
-model.fit(Xtrain, ytrain);
+model.fit(Xtrain, ytrain)
 
 print model.score(Xtrain, ytrain)
+
+#output = 0.88 = 88% accuracy
+
