@@ -59,3 +59,28 @@ print model.score(Xtrain, ytrain)
 
 #output = 0.88 = 88% accuracy
 
+
+
+
+###new model
+#one hot encoding
+df.data1 = df.iloc[:,0:19] #new training data set with all varikables where cat. variables are onehotencoded
+df.data1 = pd.get_dummies(df.data1)
+
+
+for c in df.data1.columns:
+  print c
+
+
+df.target1 = df['y']
+print df.target1.head()
+
+
+Xtrain1, Xtest1, ytrain1, ytest1 = train_test_split(df.data1, df.target1,random_state=42,test_size = 0.20)
+
+
+model1 = LogisticRegression()
+model1
+model1.fit(Xtrain1, ytrain1)
+
+print model.score(Xtrain1, ytrain1)
