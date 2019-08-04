@@ -29,6 +29,14 @@
 -Using analytics to optimize real estate sites and formats
 
 10. Supply Chain Analytics
--
+-Optimizing inventory, replenishment, and transportation costs with analytics
+
+11. Test and Learn
+- The use of randomized testing to experiment with retail innovations on a small scale
+
+12. Workforce Analytics
+-Optimization of staffing with regard to cost, customer shopping patterns, and locations
+
+
 
 
