@@ -87,3 +87,51 @@ model1.fit(Xtrain1, ytrain1)
 print model1.score(Xtrain1, ytrain1)
 
 #output 0.9103793626707132
+
+
+
+#eda analysis
+
+#what job type has the most deposits?
+
+print df.dtypes
+
+#converting y into a category variable
+
+df['y'] = df['y'].astype('category')
+print df.dtypes
+
+#replace yes =1 and no =0 in y variable
+df['y'].replace("no",0,inplace = True)
+df['y'].replace("yes",1,inplace = True)
+print df
+
+print df.groupby('job')[['y']].mean()
+
+
+####group by education
+
+print df.groupby('education')[['y']].mean()
+
+print df.groupby('default')[['y']].mean()
+
+print df.groupby('marital')[['y']].mean()
+
+#df.groupby('key').sum()
+
+print df.groupby('education')[['y']].sum()
+
+print df.pivot_table('y', index='education', columns='marital')
+
+"""marital              divorced   married    single   unknown
+education                                                  
+basic.4y             0.169734  0.096964  0.068433  0.166667
+basic.6y             0.071429  0.078664  0.106825  0.000000
+basic.9y             0.054867  0.071704  0.107903  0.250000
+high.school          0.089690  0.092090  0.142222  0.071429
+illiterate           0.500000  0.200000  0.000000       NaN
+professional.course  0.092846  0.113118  0.124298  0.000000
+university.degree    0.119671  0.128402  0.155016  0.193548
+unknown              0.106952  0.119545  0.214137  0.222222"""
+
+#we can see that single people tend to make a deposit in all education groups.
