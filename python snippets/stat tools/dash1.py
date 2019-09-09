@@ -1,0 +1,31 @@
+import dash 
+
+import dash_core_components as dcc
+
+import dash_html_components as html
+
+app = dash.Dash()
+
+
+app.layout = html.Div(
+	html.H1(children = "Hello World"),
+
+	dcc.Dropdown(
+
+		id ='my-dropdown',
+
+		options =[
+		  {'label':'Class 5A','value':'class5A'}
+		],
+
+		value = 'class5A'
+
+
+		),
+
+
+	)
+
+
+if __name__== "__main__":
+	app.run_server(debug = True)
